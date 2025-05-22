@@ -1,0 +1,179 @@
+
+.topbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+}
+.topbar h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.logout-btn {
+  padding: 0.5rem 1rem;
+  background-color: #c72e23;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  z-index: 1;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 15s infinite;
+  top: 0;
+  left: 0;
+}
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+@keyframes fade {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  33% { opacity: 1; }
+  41% { opacity: 0; }
+  60% { opacity: 0; }
+}
+.slide h1 {
+  color: white;
+  font-size: 70px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px black;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 300px;
+  margin-top: 100px;
+  z-index: 2;
+}
+
+/* Search */
+.search_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #222;
+}
+.search_input {
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 20px;
+  width: 50%;
+  color: black;
+  background-color: white;
+  outline: none;
+}
+.search_input::placeholder {
+  color: #ccc;
+}
+
+/* Documents section */
+.documents-container {
+  padding: 2rem;
+  text-align: center;
+}
+.doc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.document-card {
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 150px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.document-card:hover {
+  transform: scale(1.05);
+}
+
+.book-cover img {
+  width: 100px;
+  margin-bottom: 0.5rem;
+  height: 100px;
+}
+
+.doc-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.doc-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-view {
+  background-color: #007bff;
+}
+.btn-view:hover {
+  background-color: #0056b3;
+}
+.btn-download {
+  background-color: #28a745;
+}
+.btn-download:hover {
+  background-color: #1e7e34;
+}
+.icon{
+  height: 10px;
+  width: 10px;
+}
+.footer_div {
+  background-color: None;
+  color: rgb(1, 0, 0);
+  text-align: center;
+  padding: 20px;
+  font-size: 17px;
+}
+
+.footer_div a {
+  color: #0a0909;
+  text-decoration: none;
+}
+
+.footer_div a:hover {
+  color: #000000;
+}
+.ava{
+  color: rgb(1, 0, 0);
+  font-size: 20px;
+}
+
+
+
+

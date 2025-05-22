@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main_app/search_result.css' %}" />
+  </head>
+  <body>
+    <h2 class="search_re">Search Results for "{{ query }}"</h2>
+
+    {% if documents %}
+    <div class="documents-container">
+    {% for doc in documents %}
+    <div class="document-card">
+      <div class="book-cover">
+        <img
+          src="{% static 'main_app/icons/book_icon.png' %}"
+          class="book-icon"
+          alt="Book Icon"
+        />
+      </div>
+      <div class="doc-title">{{ doc.title }}</div>
+      <div class="doc-buttons">
+        <a href="{{ doc.file.url }}" target="_blank" class="btn btn-view"
+          >View</a
+        >
+        <a class="btn btn-download" href="{{ doc.file.url }}" download>
+          <img
+            src="{% static 'main_app/icons/donload_doc.svg' %}"
+            class="icon"
+            alt="Download"
+          />
+        </a>
+      </div>
+    </div>    
+      <div class="doc-grid">
+ 
+      {% endfor %}
+    </div>
+    {% else %}
+    <p>No documents found.</p>
+    {% endif %}
+  </body>
+</html>

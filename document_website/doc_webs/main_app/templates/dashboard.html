@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'main_app/dashboard.css' %}" />
+  </head>
+  <body>
+    <div class="topbar">
+      <h2>Documents Website</h2>
+      <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="slideshow-container">
+      <div
+        class="slide fade"
+        style="background-image: url('{% static 'main_app/image2.jpg' %}')"
+      >
+        <h1 class="welcome_label">Welcome {{ username }}</h1>
+      </div>
+      <div
+        class="slide fade"
+        style="background-image: url('{% static 'main_app/image4.jpg' %}')"
+      >
+        <h1 class="welcome_label">Welcome {{ username }}</h1>
+      </div>
+      <div
+        class="slide fade"
+        style="background-image: url('{% static 'main_app/image3.jpg' %}')"
+      >
+        <h1 class="welcome_label">Welcome {{ username }}</h1>
+      </div>
+    </div>
+    <form action="{% url 'search_results' %}" method="get">
+      <div class="search_div">
+        <input
+          class="search_input"
+          type="search"
+          name="q"
+          placeholder="search for documents"
+        />
+      </div>
+    </form>
+    <div class="documents-container">
+      <h2 class="ava">Available Documents</h2>
+      <div class="doc-grid">
+        {% for doc in documents %}
+        <div class="document-card">
+          <div class="book-cover">
+            <img
+              src="{% static 'main_app/icons/book_icon.png' %}"
+              class="book-icon"
+              alt="Book Icon"
+            />
+          </div>
+          <div class="doc-title">{{ doc.title }}</div>
+          <div class="doc-buttons">
+            <a href="{{ doc.file.url }}" target="_blank" class="btn btn-view"
+              >View</a
+            >
+            <a class="btn btn-download" href="{{ doc.file.url }}" download>
+              <img
+                src="{% static 'main_app/icons/donload_doc.svg' %}"
+                class="icon"
+                alt="Download"
+              />
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div>
+    <footer class="footer_div">
+    <p>Documents Website — All rights reserved.</p>
+    <p>
+      <a href="https://www.instagram.com/blair_wachira/" target="_blank" rel="noopener noreferrer">
+          <img src="{% static 'main_app/icons/instagram.png' %}" alt="Instagram" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+          Instagram
+      </a>
+
+    </p>
+    </footer>
+
+  </body>
+</html>
